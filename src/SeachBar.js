@@ -4,14 +4,16 @@ const SeachBar = (props) => {
     const { query = '', search, handleQueryInput } = props;
   return (
     <div className="search-box">
+      <form onSubmit={search}>
         <input 
             type="text"
             className="search-bar"
             placeholder="Search..."
             onChange = {e => handleQueryInput(e.target.value)}
             value = {query}
-            onKeyPress = {search}
+            name='locationName'
         />
+      </form>
     </div>
   )
 }

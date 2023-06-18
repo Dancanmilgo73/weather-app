@@ -52,7 +52,7 @@ const mockResult = {
 };
 
 const api = {
-  key: "",
+  key: "6644eeae024b6195c908c75ba712085b",
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
@@ -61,8 +61,7 @@ function App() {
   const [state, setState] = useState(initialState);
 
   const search = evt => {
-    if (evt.key === "Enter")
-    {
+    evt.preventDefault();
       fetch(`${ api.base }weather?q=${ state.query }&units=metric&appid=${ api.key }`)
         .then(res => res.json())
         .then(result => {
@@ -72,7 +71,6 @@ function App() {
             weather: result
           }));
         });
-    }
   };
 
   const dateBuilder = (d) => {
