@@ -4,7 +4,7 @@ const SeachBar = (props) => {
     const { query = '', search, handleQueryInput } = props;
   return (
     <div className="search-box">
-      <form onSubmit={search}>
+      <form onSubmit={search} data-testid='form'>
         <input 
             type="text"
             className="search-bar"

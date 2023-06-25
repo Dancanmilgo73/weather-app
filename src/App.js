@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SeachBar from './SeachBar';
 import DisplayWeather from './DisplayWeather';
+// Feel free to use thei mock response if you do have an api key to use
 const mockResult = {
   "coord": {
     "lon": 10.99,
@@ -52,7 +53,7 @@ const mockResult = {
 };
 
 const api = {
-  key: "6644eeae024b6195c908c75ba712085b",
+  key: "",
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
@@ -102,28 +103,6 @@ function App() {
           search={ search }
           query={state.query}
         />
-        {/* <div className="search-box">
-          <input 
-            type="text"
-            className="search-bar"
-            placeholder="Search..."
-            onChange = {e => setQuery(e.target.value)}
-            value = {query}
-            onKeyPress = {search}
-          />
-        </div> */}
-        {/* {(typeof weather.main!="undefined") ? (
-        <div>
-          <div className="location-box">
-          <div className="location">{weather.name},{weather.sys.country}</div>
-          <div className="date">{dateBuilder(new Date())}</div>
-        </div>
-        <div className="weather-box">
-          <div className="temp">{Math.round(weather.main.temp)}°c</div>
-          <div className="weather">{weather.weather[0].main}</div>
-        </div>
-        </div>
-        ) : ('')} */}
         <DisplayWeather
           dateBuilder={ dateBuilder }
           weather={state.weather}
